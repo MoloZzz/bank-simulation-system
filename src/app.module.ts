@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import { validationSchema } from './common/config/env.validation';
+import { validationSchema } from '../config/env.validation';
 import { PostgresqlModule } from './libs/postgresql/postgresql.module';
 import { entities } from './common/entities';
 import { migrations } from './common/migrations';

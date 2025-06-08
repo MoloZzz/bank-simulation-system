@@ -45,3 +45,14 @@ $ yarn run test:e2e
 # test coverage
 $ yarn run test:cov
 ```
+
+## TypeORM instructions
+* Create a new entity in [directory](/src/common/entities)
+* Add a new entity to [import array](/src/common/entities/index.ts)
+* Generate a new migration for this entity
+
+```bash
+$ yarn run typeorm:migration:generate ./src/common/migrations/{name}
+# example
+$ yarn run typeorm:migration:generate ./src/common/migrations/create-users
+```
