@@ -6,6 +6,12 @@ import { validationSchema } from '../config/env.validation';
 import { PostgresqlModule } from './libs/postgresql/postgresql.module';
 import { entities } from './common/entities';
 import { migrations } from './common/migrations';
+import { AssetModule } from './asset/asset.module';
+import { UserModule } from './user/user.module';
+import { MarketOfferModule } from './market-offer/market-offer.module';
+import { TradeModule } from './trade/trade.module';
+import { TransactionModule } from './transaction/transaction.module';
+import { WalletModule } from './wallet/wallet.module';
 
 @Module({
     imports: [
@@ -15,6 +21,12 @@ import { migrations } from './common/migrations';
             validationSchema,
         }),
         PostgresqlModule.register(entities, migrations, []),
+        AssetModule,
+        UserModule,
+        MarketOfferModule,
+        TradeModule,
+        TransactionModule,
+        WalletModule,
     ],
     controllers: [AppController],
     providers: [AppService],
