@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn, OneToOne } from 'typeorm';
 import { WalletEntity } from './wallet.entity';
 
 @Entity('users')
@@ -27,6 +27,6 @@ export class UserEntity {
     @UpdateDateColumn()
     updatedAt: Date;
 
-    @OneToMany(() => WalletEntity, (wallet) => wallet.user)
-    wallets: WalletEntity[];
+    @OneToOne(() => WalletEntity, (wallet) => wallet.user)
+    wallet: WalletEntity;
 }

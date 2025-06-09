@@ -6,7 +6,7 @@ export class WalletEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @ManyToOne(() => UserEntity, (user) => user.wallets)
+    @ManyToOne(() => UserEntity, (user) => user.wallet)
     user: UserEntity;
 
     @Column({ type: 'numeric', default: 0 })
