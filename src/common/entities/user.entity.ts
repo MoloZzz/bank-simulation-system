@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn, OneToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToOne, JoinColumn } from 'typeorm';
 import { WalletEntity } from './wallet.entity';
 
 @Entity('users')
@@ -28,5 +28,6 @@ export class UserEntity {
     updatedAt: Date;
 
     @OneToOne(() => WalletEntity, (wallet) => wallet.user)
+    @JoinColumn()
     wallet: WalletEntity;
 }

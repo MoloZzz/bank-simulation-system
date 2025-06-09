@@ -1,7 +1,8 @@
-import { PrimaryGeneratedColumn, ManyToOne, Column, OneToMany } from 'typeorm';
+import { PrimaryGeneratedColumn, ManyToOne, Column, OneToMany, Entity } from 'typeorm';
 import { TransactionEntity } from './transaction.entity';
 import { UserEntity } from './user.entity';
 
+@Entity('wallets')
 export class WalletEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
