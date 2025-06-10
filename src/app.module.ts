@@ -10,6 +10,8 @@ import { MarketOfferModule } from './market-offer/market-offer.module';
 import { TradeModule } from './trade/trade.module';
 import { TransactionModule } from './transaction/transaction.module';
 import { WalletModule } from './wallet/wallet.module';
+import { AuthModule } from './auth/auth.module';
+import { EmailModule } from './integrations/email/email.module';
 
 @Module({
     imports: [
@@ -25,6 +27,8 @@ import { WalletModule } from './wallet/wallet.module';
         TradeModule,
         TransactionModule,
         WalletModule,
+        AuthModule,
+        EmailModule,
     ],
     controllers: [],
     providers: [],
