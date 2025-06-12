@@ -46,6 +46,19 @@ Just practice to do transactions system
 
 - можливо — переміщення активу (якщо він персональний).
 
+## Авторизація (JWT) настпуні кроки
+- Логін (JWT генерація)
+
+- Захист ендпоінтів (LoggedInGuard)
+
+- Збереження токенів у Redis
+
+- Refresh токени
+
+- Email-інтеграція
+
+- Forgot password (опційно)
+
 ## Project setup
 
 ```bash
