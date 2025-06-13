@@ -7,7 +7,7 @@ Just practice to do transactions system
 
 - users — користувачі, першочергово - гравці (агенти)
 
-- products — товари, якими можна торгувати (в майбутньому конкретизуємо)
+- assets — товари, якими можна торгувати (в майбутньому конкретизуємо)
 
 - market_offers — пропозиції купівлі/продажу 
 
@@ -46,6 +46,22 @@ Just practice to do transactions system
 
 - можливо — переміщення активу (якщо він персональний).
 
+## Реєстрація користувача
+Дані:
+- email
+- username
+- password
+
+Логіка:
+- Перевірити унікальність email і username.
+- Захешувати пароль через bcrypt.
+- Створити юзера з isActive: false і confirmationToken(в кеші).
+- Надіслати email з посиланням для підтвердження.
+
+Підтвердження email
+- Endpoint: GET /auth/confirm?token=...
+- По токену активується акаунт (isActive = true), очищується confirmationToken (з кешу, або очищується по закінченню часу).
+
 ## Авторизація (JWT) настпуні кроки
 - Логін (JWT генерація)
 
@@ -58,6 +74,7 @@ Just practice to do transactions system
 - Email-інтеграція
 
 - Forgot password (опційно)
+
 
 ## Project setup
 
